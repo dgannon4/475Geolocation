@@ -46,9 +46,9 @@
 			</div>
 			<ul class="main-menu">
 				<li><a href="./index.html">Home</a></li>
-				<li><a href="./about.html">About us</a></li>
-				<li><a href="./service.html">Services</a></li>
-				<li><a href="./blog.html">News</a></li>
+				<li><a href="./about.html">About</a></li>
+				<li><a href="./geomap.html">Tour</a></li>
+				<li><a href="./notification.html">Notification</a></li>
 				<li><a href="./contact.html">Contact</a></li>
 			</ul>
 		</div>
@@ -59,9 +59,9 @@
 	<!-- Page Top section -->
 	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
 		<div class="container">
-			<h2>Services</h2>
+			<h2>Barsema Tour</h2>
 			<div class="site-breadcrumb">
-				<a href="home">Home</a> / <span>Services</span>
+				<a href="home">Home</a> / <span>Tour</span>
 			</div>
 		</div>
 	</section>
@@ -72,53 +72,52 @@
 	<section class="features-section spad">
 		<div class="container">
 			<div class="section-title">
-				<img src="./img/section-title-icon.png" alt="#">
-				<p>The best out there</p>
-				<h2>See our features</h2>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 feature-item">
-					<div class="ft-icon">
-						<i class="flaticon-domain-registration"></i>
-					</div>
-					<h4>Buy your Domain</h4>
-					<p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis.</p>
-				</div>
-				<div class="col-lg-4 col-md-6 feature-item fi-center-top">
-					<div class="ft-icon">
-						<i class="flaticon-server"></i>
-					</div>
-					<h4>Cloud Database</h4>
-					<p>Ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. </p>
-				</div>
-				<div class="col-lg-4 col-md-6 feature-item">
-					<div class="ft-icon">
-						<i class="flaticon-devices"></i>
-					</div>
-					<h4>SSD-Only</h4>
-					<p>Suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. </p>
-				</div>
-				<div class="col-lg-4 col-md-6 feature-item">
-					<div class="ft-icon">
-						<i class="flaticon-smartphone"></i>
-					</div>
-					<h4>Smart Contacts</h4>
-					<p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis.</p>
-				</div>
-				<div class="col-lg-4 col-md-6 feature-item">
-					<div class="ft-icon">
-						<i class="flaticon-folder"></i>
-					</div>
-					<h4>Free Support</h4>
-					<p>Ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. </p>
-				</div>
-				<div class="col-lg-4 col-md-6 feature-item">
-					<div class="ft-icon">
-						<i class="flaticon-viral-marketing"></i>
-					</div>
-					<h4>Viral Marketing</h4>
-					<p>Suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. </p>
-				</div>
+
+	<!-- Geotracking here -->
+
+				<p>Click the button to get your coordinates.</p>
+
+				<button onclick="getLocation()">Try It</button>
+				<br>
+				<br>
+
+				
+				<p id="demo"></p>
+				
+				<script>
+					var x = document.getElementById("demo");
+					
+					function getLocation() {
+						if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(showPosition, showError);
+						} else { 
+						x.innerHTML = "Geolocation is not supported by this browser.";
+						}
+					}
+					
+					function showPosition(position) {
+						x.innerHTML = "Latitude: " + position.coords.latitude + 
+						"<br>Longitude: " + position.coords.longitude;
+					}
+					
+					function showError(error) {
+						switch(error.code) {
+						case error.PERMISSION_DENIED:
+							x.innerHTML = "User denied the request for Geolocation."
+							break;
+						case error.POSITION_UNAVAILABLE:
+							x.innerHTML = "Location information is unavailable."
+							break;
+						case error.TIMEOUT:
+							x.innerHTML = "The request to get user location timed out."
+							break;
+						case error.UNKNOWN_ERROR:
+							x.innerHTML = "An unknown error occurred."
+							break;
+						}
+					}
+				</script>
+
 			</div>
 		</div>
 	</section>
@@ -141,11 +140,6 @@
 						<h4>Our Vission</h4>
 						<p>Lacinia ex eleifend orci porttitor, suscipit interdum augue cond-imentum. Etiam pretium turpis eget nibh laoreet iaculis. Vivamus auctor mi eget odio feugiat, quis aliquet velit ornare. Integer eges-tas sit amet neque sed elementum. Fusce ut turpis felis. Etiam pretium pharetra augue, ac porttitor dolor consequat eget. Cras tempor suscipit enim vehicula ultrices. Mauris sed orci blandit, rhoncus massa non.</p>
 						<a href="#" class="site-btn">Read More</a>
-					</div>
-				</div>
-				<div class="col-lg-4 p-0 service-box">
-					<div class="service-box-image text-white">
-						<img src="img/service.png" alt="">
 					</div>
 				</div>
 			</div>
