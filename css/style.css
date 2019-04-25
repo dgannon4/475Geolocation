@@ -538,6 +538,7 @@ ol {
 	width: 100%;
 	padding-top: 25px;
 	z-index: 99;
+	background-color: red;
 }
 
 .site-logo {
@@ -566,7 +567,7 @@ ol {
 .main-menu li a {
 	display: inline-block;
 	font-size: 16px;
-	color: black;
+	color: white;
 	margin-left: 50px;
 	-webkit-transition: all 0.4s;
 	-o-transition: all 0.4s;
@@ -574,7 +575,7 @@ ol {
 }
 
 .main-menu li a:hover {
-	color: #eb2b63;
+	color: black;
 }
 
 .user-panel {
